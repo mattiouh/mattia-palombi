@@ -1,0 +1,9 @@
+# Materiale locale di verifica: non fa parte del sito pubblicato.
+/artifacts/
+
+# Asset sperimentale non utilizzato dalla versione attuale.
+/assets/hero-orbit.png
+
+# File generati dal sistema.
+.DS_Store
+Thumbs.db
