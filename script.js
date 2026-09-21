@@ -49,10 +49,10 @@
   };
 
   const setFlipControl = () => {
-    const label = isBack ? "Fronte" : "Retro";
+    const label = isBack ? "By Palombi" : "1diFiducia";
     const action = isBack
-      ? "Mostra il fronte del biglietto"
-      : "Gira il biglietto e scopri come lavoro";
+      ? "Mostra la carta By Palombi"
+      : "Mostra la carta di 1difiducia.it";
 
     flipButtons.forEach((button) => {
       button.setAttribute("aria-label", action);
@@ -63,23 +63,44 @@
     });
   };
 
-  const flipCard = () => {
-    if (isFlipping) return;
-    isFlipping = true;
-    isBack = !isBack;
+  const setFace = (nextFace, { animate = false, announceChange = true, updateUrl = false } = {}) => {
+    if (isFlipping && !animate) return;
+    if (nextFace === isBack && !animate) {
+      setFaceAccessibility();
+      setFlipControl();
+      return;
+    }
+
+    window.clearTimeout(flipTimer);
+    isFlipping = animate;
+    isBack = nextFace;
     const directionClass = isBack ? "is-flipping-to-back" : "is-flipping-to-front";
     cardCamera.classList.remove("is-flipping-to-back", "is-flipping-to-front");
     cardCamera.classList.toggle("is-back", isBack);
-    cardCamera.classList.add(directionClass);
+    if (animate) cardCamera.classList.add(directionClass);
     setFaceAccessibility();
     setFlipControl();
-    announce(isBack ? "Retro del biglietto mostrato." : "Fronte del biglietto mostrato.");
+    if (updateUrl) {
+      const faceHash = isBack ? "#1difiducia" : "#bypalombi";
+      window.history.replaceState(null, "", `${window.location.pathname}${window.location.search}${faceHash}`);
+    }
+    if (announceChange) announce(isBack ? "Carta di 1difiducia.it mostrata." : "Carta By Palombi mostrata.");
 
-    window.clearTimeout(flipTimer);
-    flipTimer = window.setTimeout(() => {
-      cardCamera.classList.remove(directionClass);
-      isFlipping = false;
-    }, reducedMotion.matches ? 0 : 880);
+    if (animate) {
+      flipTimer = window.setTimeout(() => {
+        cardCamera.classList.remove(directionClass);
+        isFlipping = false;
+      }, reducedMotion.matches ? 0 : 880);
+    }
+  };
+
+  const flipCard = () => {
+    if (isFlipping) return;
+    setFace(!isBack, { animate: true, updateUrl: true });
+  };
+
+  const syncFaceFromUrl = () => {
+    setFace(window.location.hash === "#1difiducia", { announceChange: false });
   };
 
   const activatePanel = (name) => {
@@ -244,6 +265,7 @@
   window.addEventListener("pointermove", moveCardAgainstPointer, { passive: true });
   document.documentElement.addEventListener("pointerleave", clearCardMotion);
   window.addEventListener("blur", clearCardMotion);
+  window.addEventListener("hashchange", syncFaceFromUrl);
 
   reducedMotion.addEventListener?.("change", () => {
     if (reducedMotion.matches) clearCardMotion();
@@ -255,6 +277,8 @@
     if (!desktopViewport.matches) clearCardMotion();
   });
 
-  setFaceAccessibility();
-  setFlipControl();
+  if (window.location.hash !== "#bypalombi" && window.location.hash !== "#1difiducia") {
+    window.history.replaceState(null, "", `${window.location.pathname}${window.location.search}#bypalombi`);
+  }
+  syncFaceFromUrl();
 })();

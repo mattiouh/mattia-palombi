@@ -122,35 +122,6 @@ a:focus-visible {
   border-style: dashed;
 }
 
-.scene-note {
-  position: absolute;
-  z-index: 2;
-  display: flex;
-  align-items: center;
-  gap: .55rem;
-  color: rgba(36, 49, 38, .68);
-  font: 500 clamp(.58rem, .78vw, .71rem)/1.2 var(--mono);
-  letter-spacing: .01em;
-  text-transform: uppercase;
-}
-
-.scene-note--top {
-  top: max(1.15rem, env(safe-area-inset-top));
-  left: max(1.25rem, env(safe-area-inset-left));
-}
-
-.scene-note--bottom {
-  right: max(1.25rem, env(safe-area-inset-right));
-  bottom: max(1.15rem, env(safe-area-inset-bottom));
-}
-
-.scene-note i {
-  width: .35rem;
-  height: .35rem;
-  border-radius: 50%;
-  background: var(--clay);
-}
-
 /* The card is one physical object: its print, edge and controls share the tilt,
    while only .card-rotor turns over to reveal the reverse. */
 .card-stage {
@@ -324,8 +295,8 @@ a:focus-visible {
 .card-back {
   color: var(--cream);
   background:
-    radial-gradient(circle at 89% 14%, rgba(211, 192, 143, .2) 0 8%, transparent 8.2%),
-    linear-gradient(128deg, #2a3a2d 0%, #1d2c23 100%);
+    radial-gradient(circle at 89% 14%, rgba(232, 242, 155, .14) 0 8%, transparent 8.2%),
+    linear-gradient(128deg, #173e35 0%, #102e27 100%);
   border-color: rgba(246, 240, 223, .3);
   transform: rotateY(180deg);
   box-shadow:
@@ -366,46 +337,45 @@ a:focus-visible {
   gap: .55rem;
 }
 
-.portfolio-button {
+.udf-brand-lockup {
   display: inline-flex;
   align-items: center;
-  gap: .32rem;
-  border: 1px solid currentColor;
-  border-radius: 999px;
-  padding: .38rem .56rem;
-  color: var(--ink);
-  font: 500 clamp(.48rem, .64vw, .6rem)/1 var(--mono);
-  letter-spacing: .01em;
-  text-decoration: none;
-  text-transform: uppercase;
-  transition: color .18s ease, background .18s ease, transform .18s ease;
+  justify-content: center;
+  width: clamp(7.7rem, 12vw, 11.5rem);
+  border-radius: .38rem;
+  padding: .45rem .55rem;
+  background: #f7f7ef;
+  box-shadow: inset 0 0 0 1px rgba(23, 62, 53, .16);
 }
 
-.portfolio-button:hover {
-  color: var(--cream);
-  background: var(--ink);
-  transform: translateY(-.08rem);
-}
-
-.card-back .portfolio-button { color: var(--cream); }
-
-.card-back .portfolio-button:hover {
-  color: var(--ink);
-  background: var(--paper-light);
+.udf-brand-lockup img {
+  display: block;
+  width: 100%;
+  height: auto;
 }
 
 .signature-lockup {
-  display: inline-flex;
-  align-items: center;
-  gap: .58rem;
+  margin: 0;
+  color: var(--ink);
+  font: 500 clamp(.85rem, 1.08vw, 1.05rem)/1 var(--sans);
+  letter-spacing: -.035em;
 }
 
-.signature-mark {
-  display: block;
-  width: clamp(4.7rem, 8vw, 7.4rem);
-  height: auto;
-  object-fit: contain;
-  object-position: left center;
+.founder-lockup {
+  display: grid;
+  gap: .34rem;
+}
+
+.founder-lockup span {
+  color: rgba(246, 240, 223, .66);
+  font: 500 clamp(.5rem, .68vw, .64rem)/1 var(--mono);
+  letter-spacing: .09em;
+  text-transform: uppercase;
+}
+
+.founder-lockup strong {
+  font: 500 clamp(1rem, 1.72vw, 1.55rem)/.9 var(--serif);
+  letter-spacing: -.055em;
 }
 
 .print-index,
@@ -460,13 +430,15 @@ a:focus-visible {
 
 .person-name {
   margin-top: clamp(.65rem, 1.35vw, 1.2rem);
-  font: 600 clamp(3.1rem, 6.4vw, 6.4rem)/.77 var(--sans);
+  width: min(100%, 31rem);
 }
 
-.person-name em {
-  color: var(--moss);
-  font-family: var(--serif);
-  font-weight: 500;
+.front-brand-mark {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  object-position: left center;
 }
 
 .person-role {
@@ -593,6 +565,7 @@ a:focus-visible {
   background: transparent;
   font: 500 clamp(.55rem, .72vw, .67rem)/1 var(--mono);
   letter-spacing: -.025em;
+  text-decoration: none;
   transition: color .18s ease, background .18s ease, transform .18s ease;
 }
 
@@ -791,16 +764,6 @@ a:focus-visible {
 
 .panel-link:hover { color: var(--clay); }
 
-.panel-actions {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: .9rem 1.2rem;
-  margin-top: clamp(1.35rem, 2.7vw, 2.1rem);
-}
-
-.panel-actions .panel-link { margin-top: 0; }
-
 .panel-steps li {
   display: grid;
   grid-template-columns: 2.3rem 1fr;
@@ -931,23 +894,6 @@ a:focus-visible {
     width: min(48vw, 15rem);
   }
 
-  .scene-note {
-    font-size: .6rem;
-    white-space: nowrap;
-  }
-
-  .scene-note--top {
-    top: max(.72rem, env(safe-area-inset-top));
-    left: 50%;
-    transform: translateX(-50%);
-  }
-
-  .scene-note--bottom {
-    right: 50%;
-    bottom: max(.72rem, env(safe-area-inset-bottom));
-    transform: translateX(50%);
-  }
-
   .card-stage {
     width: min(calc(100vw - 1.5rem), calc((100dvh - 5rem) * .6470588235), 25rem);
     max-width: none;
@@ -967,12 +913,6 @@ a:focus-visible {
     padding-bottom: 5rem;
   }
 
-  .signature-lockup { gap: .52rem; }
-
-  .signature-mark {
-    width: clamp(4.1rem, 20vw, 5.5rem);
-  }
-
   .print-index,
   .print-kicker,
   .print-footer span,
@@ -981,17 +921,16 @@ a:focus-visible {
     font-size: .64rem;
   }
 
-  .portfolio-button {
-    padding: .34rem .48rem;
-    font-size: .5rem;
-  }
-
   .front-identity { width: 100%; }
+
+  .udf-brand-lockup {
+    width: clamp(6.4rem, 32vw, 8rem);
+    padding: .35rem .42rem;
+  }
 
   .person-name {
     margin-top: .85rem;
-    font-size: clamp(3.15rem, 16vw, 4.3rem);
-    line-height: .8;
+    width: min(100%, 18rem);
   }
 
   .person-role {
@@ -1109,8 +1048,6 @@ a:focus-visible {
 }
 
 @media (orientation: landscape) and (max-height: 500px) {
-  .scene-note { display: none; }
-
   .card-stage {
     width: min(calc(100vw - 1.5rem), calc((100dvh - 1.5rem) * 1.5454545455));
   }
@@ -1120,10 +1057,6 @@ a:focus-visible {
   .card-face {
     padding: clamp(.7rem, 2.7vw, 1.05rem);
     padding-bottom: 4.35rem;
-  }
-
-  .signature-mark {
-    width: 3.7rem;
   }
 
   .print-index,
@@ -1136,7 +1069,7 @@ a:focus-visible {
 
   .person-name {
     margin-top: .45rem;
-    font-size: clamp(2.15rem, 7.8vw, 3.35rem);
+    width: min(100%, 18rem);
   }
 
   .person-role {
@@ -1258,20 +1191,8 @@ a:focus-visible {
     margin-top: .45rem;
   }
 
-  .panel-actions {
-    grid-column: 1;
-    grid-row: 3;
-    align-self: end;
-    justify-self: start;
-    margin-top: .45rem;
-  }
-
-  .panel-actions .panel-link {
-    grid-column: auto;
-    grid-row: auto;
-  }
-
-  [data-panel="contact"] .panel-link { grid-row: 4; }
+  [data-panel="contact"] .panel-link,
+  [data-panel="company"] .panel-link { grid-row: 4; }
 }
 
 @media (prefers-reduced-motion: reduce) {

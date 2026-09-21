@@ -2,8 +2,11 @@
 
 Biglietto digitale interattivo di By Palombi.
 
-## Portfolio provvisorio
+Il retro integra l'identit&agrave; e i collegamenti principali di [UnoDiFiducia.it](https://unodifiducia.it/): sito, interventi, criteri, guide e contatti.
 
-I pulsanti Portfolio puntano a `/portfolio`: quando il sito sara' pubblicato, apriranno automaticamente `https://tuo-dominio/portfolio`.
+## Due facce condivisibili
 
-Per sostituire il collegamento, cerca `href="/portfolio"` in `index.html` e inserisci l'URL definitivo.
+- `#bypalombi` apre il lato dedicato al lavoro creativo.
+- `#1difiducia` apre direttamente il lato aziendale.
+
+Il pannello Contatti collega direttamente ai profili ufficiali [Instagram](https://www.instagram.com/bypalombi/) e [Facebook](https://www.facebook.com/profile.php?id=61584627505358) di By Palombi.
