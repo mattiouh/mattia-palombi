@@ -49,10 +49,10 @@
   };
 
   const setFlipControl = () => {
-    const label = isBack ? "By Palombi" : "1diFiducia";
+    const label = isBack ? "By Palombi" : "UnoDiFiducia";
     const action = isBack
       ? "Mostra la carta By Palombi"
-      : "Mostra la carta di 1difiducia.it";
+      : "Mostra la carta di UnoDiFiducia";
 
     flipButtons.forEach((button) => {
       button.setAttribute("aria-label", action);
