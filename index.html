@@ -46,7 +46,7 @@
 
                   <div class="front-identity">
                     <p class="print-kicker">Web &middot; advertising &middot; IA</p>
-                    <h1 class="person-name">Fatti<br>scegliere<br><em>prima.</em></h1>
+                    <h1 class="person-name">Fatti scegliere.<br><em>Prima ancora di spiegarti.</em></h1>
                     <ul class="front-services" aria-label="Servizi By Palombi">
                       <li><span aria-hidden="true">&#8599;</span>Siti web che convertono</li>
                       <li><span aria-hidden="true">&#10022;</span>Pubblicit&agrave; che si nota</li>
@@ -67,13 +67,13 @@
                   </footer>
 
                   <nav class="control-dock" aria-label="Azioni del fronte">
-                    <button class="game-control" type="button" data-open-panel="offer" aria-haspopup="dialog" aria-label="Apri i servizi">
-                      <span class="control-symbol" aria-hidden="true">&#10022;</span>
-                      <span class="control-label">Servizi</span>
+                    <button class="game-control" type="button" data-open-panel="portfolio" aria-haspopup="dialog" aria-label="Apri il portfolio demo">
+                      <span class="control-symbol" aria-hidden="true">&#9645;</span>
+                      <span class="control-label">Portfolio</span>
                     </button>
-                    <button class="game-control" type="button" data-open-panel="method" aria-haspopup="dialog" aria-label="Apri come lavoro">
+                    <button class="game-control" type="button" data-open-panel="studio" aria-haspopup="dialog" aria-label="Apri servizi e metodo">
                       <span class="control-symbol" aria-hidden="true">&#8801;</span>
-                      <span class="control-label">Come lavoro</span>
+                      <span class="control-label">Servizi + metodo</span>
                     </button>
                     <button class="game-control" type="button" data-open-panel="contact" aria-haspopup="dialog" aria-label="Apri i contatti">
                       <span class="control-symbol" aria-hidden="true">&#9993;</span>
@@ -103,7 +103,7 @@
 
                   <div class="back-copy">
                     <p class="print-kicker">Casa &amp; efficienza</p>
-                    <h2>Trova quello<br>giusto.</h2>
+                    <h2>Trova quello giusto.<br><em>Per la tua casa.</em></h2>
                     <p>Ti aiutiamo a capire cosa ti serve e a trovare professionisti selezionati nella tua zona.</p>
                   </div>
 
@@ -149,32 +149,48 @@
   <div class="dialog-layer" data-dialog-layer hidden inert aria-hidden="true">
     <button class="dialog-backdrop" type="button" data-close-dialog aria-label="Chiudi il pannello"></button>
 
-    <section class="side-panel" data-dialog role="dialog" aria-modal="true" aria-labelledby="panel-offer-title" tabindex="-1">
+    <section class="side-panel" data-dialog role="dialog" aria-modal="true" aria-labelledby="panel-portfolio-title" tabindex="-1">
       <div class="panel-grain" aria-hidden="true"></div>
 
-      <section class="panel-content" data-panel="offer">
+      <section class="panel-content" data-panel="portfolio">
         <div class="panel-heading">
-          <p class="panel-kicker">Servizi</p>
+          <p class="panel-kicker">Portfolio demo</p>
           <button class="close-button" type="button" data-close-dialog aria-label="Chiudi il pannello"><span aria-hidden="true">&times;</span></button>
         </div>
-        <h2 id="panel-offer-title">Una direzione creativa, in ogni formato.</h2>
-        <ul class="offer-list">
-          <li>Web design, UI/UX e landing page</li>
-          <li>Pubblicit&agrave; e campagne creative</li>
-          <li>Video brevi per social e ads</li>
-          <li>Video lunghi, presentazioni e narrazione</li>
-          <li>Statici, visual e formati su richiesta</li>
-          <li>Workflow IA avanzati, guidati da una direzione umana</li>
-        </ul>
+        <h2 id="panel-portfolio-title">Tre direzioni, pensate per farsi scegliere.</h2>
+        <p class="contact-copy">Sono demo e case study di impostazione: mostrano il tipo di ragionamento, non lavori di clienti.</p>
+        <div class="portfolio-grid" aria-label="Tre lavori demo">
+          <a class="portfolio-case portfolio-case--linked" href="https://fizzora-landing.pages.dev/" target="_blank" rel="noopener noreferrer" aria-label="Apri il demo Fizzora">
+            <span class="case-number">01</span>
+            <div><b>Fizzora</b><p>Landing demo: una presenza digitale pensata per farsi ricordare.</p></div>
+            <span class="case-status">APRI DEMO &#8599;</span>
+          </a>
+          <a class="portfolio-case portfolio-case--linked" href="https://studio-nova-bof.pages.dev/" target="_blank" rel="noopener noreferrer" aria-label="Apri il demo Studio Nova">
+            <span class="case-number">02</span>
+            <div><b>Studio Nova</b><p>Demo di brand e presenza web, costruita per guidare l'attenzione.</p></div>
+            <span class="case-status">APRI DEMO &#8599;</span>
+          </a>
+          <article class="portfolio-case">
+            <span class="case-number">03</span>
+            <div><b>Brand in movimento</b><p>Web, advertising e contenuti pensati come un sistema unico.</p></div>
+            <span class="case-status">DEMO · LINK IN ARRIVO</span>
+          </article>
+        </div>
         <button class="panel-link" type="button" data-open-panel="contact">Parliamone <span aria-hidden="true">&#8599;</span></button>
       </section>
 
-      <section class="panel-content" data-panel="method" hidden>
+      <section class="panel-content" data-panel="studio" hidden>
         <div class="panel-heading">
-          <p class="panel-kicker">Come lavoro</p>
+          <p class="panel-kicker">Servizi + metodo</p>
           <button class="close-button" type="button" data-close-dialog aria-label="Chiudi il pannello"><span aria-hidden="true">&times;</span></button>
         </div>
-        <h2 id="panel-method-title">Tre passi, una direzione precisa.</h2>
+        <h2 id="panel-studio-title">Una direzione creativa, in ogni formato.</h2>
+        <ul class="offer-list">
+          <li>Web design, UI/UX e landing page</li>
+          <li>Pubblicit&agrave;, visual e campagne creative</li>
+          <li>Video e contenuti con workflow IA avanzati</li>
+        </ul>
+        <p class="panel-subhead">Il processo</p>
         <ol class="panel-steps">
           <li><span>01</span><div><b>Mettiamo a fuoco</b><p>Obiettivo, pubblico e messaggio: capiamo cosa deve muovere le persone.</p></div></li>
           <li><span>02</span><div><b>Progettiamo il sistema</b><p>Scelgo formato, idea e workflow: web, ads, statici o video.</p></div></li>

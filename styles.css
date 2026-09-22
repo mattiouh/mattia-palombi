@@ -408,7 +408,7 @@ a:focus-visible {
 }
 
 .front-identity {
-  width: min(78%, 51rem);
+  width: min(94%, 67rem);
   margin-top: auto;
 }
 
@@ -438,8 +438,8 @@ a:focus-visible {
 
 .person-name {
   margin-top: clamp(.65rem, 1.35vw, 1.2rem);
-  width: min(100%, 31rem);
-  font: 600 clamp(3.1rem, 6.4vw, 6.4rem)/.77 var(--sans);
+  width: 100%;
+  font: 600 clamp(3.35rem, 4.85vw, 5.75rem)/.82 var(--sans);
 }
 
 .person-name em {
@@ -507,14 +507,20 @@ a:focus-visible {
 }
 
 .back-copy {
-  width: min(73%, 44rem);
+  width: min(94%, 67rem);
   margin-top: auto;
 }
 
 .back-copy h2 {
-  max-width: 15ch;
+  max-width: none;
   margin-top: clamp(.65rem, 1.35vw, 1.2rem);
-  font: 500 clamp(2rem, 4.25vw, 4.55rem)/.9 var(--serif);
+  font: 500 clamp(2.8rem, 5.25vw, 6rem)/.86 var(--serif);
+}
+
+.back-copy h2 em {
+  color: #e8f29b;
+  font-style: italic;
+  font-weight: 400;
 }
 
 .back-copy > p:last-child {
@@ -776,6 +782,67 @@ a:focus-visible {
   line-height: 1.3;
 }
 
+.panel-subhead {
+  margin: clamp(1.5rem, 3vw, 2.25rem) 0 0;
+  color: var(--moss);
+  font: 500 .62rem/1 var(--mono);
+  letter-spacing: .08em;
+  text-transform: uppercase;
+}
+
+.portfolio-grid {
+  display: grid;
+  gap: .72rem;
+  margin-top: clamp(1.25rem, 2.8vw, 2.15rem);
+}
+
+.portfolio-case {
+  display: grid;
+  grid-template-columns: 2.2rem minmax(0, 1fr);
+  gap: .55rem .75rem;
+  padding: .9rem;
+  border: 1px solid var(--line);
+  border-radius: .72rem;
+  color: var(--ink);
+  background: rgba(255,255,255,.35);
+}
+
+.portfolio-case--linked {
+  text-decoration: none;
+  transition: border-color .18s ease, background .18s ease, transform .18s ease;
+}
+
+.portfolio-case--linked:hover {
+  border-color: var(--ink);
+  background: rgba(255,255,255,.66);
+  transform: translateX(.16rem);
+}
+
+.case-number,
+.case-status {
+  font: 500 .56rem/1.2 var(--mono);
+  letter-spacing: .035em;
+}
+
+.case-number { color: var(--clay); }
+
+.portfolio-case b {
+  display: block;
+  letter-spacing: -.035em;
+}
+
+.portfolio-case p {
+  margin: .24rem 0 0;
+  color: rgba(36, 49, 38, .68);
+  font-size: .8rem;
+  line-height: 1.3;
+}
+
+.case-status {
+  grid-column: 2;
+  color: var(--moss);
+}
+
 .panel-link {
   display: inline-flex;
   min-height: 2.75rem;
@@ -962,7 +1029,8 @@ a:focus-visible {
 
   .person-name {
     margin-top: .85rem;
-    width: min(100%, 18rem);
+    width: 100%;
+    font-size: clamp(2.8rem, 12vw, 3.65rem);
   }
 
   .front-services {
@@ -992,9 +1060,8 @@ a:focus-visible {
   .back-copy { width: 100%; }
 
   .back-copy h2 {
-    max-width: 13ch;
     margin-top: .8rem;
-    font-size: clamp(2rem, 9.8vw, 2.65rem);
+    font-size: clamp(2rem, 8.3vw, 2.8rem);
     line-height: .94;
   }
 
@@ -1096,11 +1163,12 @@ a:focus-visible {
   .printed-services,
   .print-footer--back { font-size: .6rem; }
 
-  .front-identity { width: 82%; }
+  .front-identity { width: 94%; }
 
   .person-name {
     margin-top: .45rem;
-    width: min(100%, 18rem);
+    width: 100%;
+    font-size: clamp(2.1rem, 5.8vw, 3.1rem);
   }
 
   .person-role {
@@ -1123,11 +1191,11 @@ a:focus-visible {
   .print-footer > p,
   .print-footer--back > p:last-child { text-align: right; }
 
-  .back-copy { width: 75%; }
+  .back-copy { width: 94%; }
 
   .back-copy h2 {
     margin-top: .45rem;
-    font-size: clamp(1.45rem, 5vw, 2.2rem);
+    font-size: clamp(1.45rem, 4.4vw, 2.2rem);
   }
 
   .back-copy > p:last-child {
